@@ -1,5 +1,5 @@
-
-  hosts: client_node
+---
+- hosts: client_node
   become: True
   roles:
     - hands-on
