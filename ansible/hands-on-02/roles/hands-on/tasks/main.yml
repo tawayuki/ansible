@@ -1,0 +1,22 @@
+---
+- name: install apache2
+  yum:
+    name: httpd
+    state: latest
+
+- name: run httpd
+  service:
+    name: httpd
+    state: restarted
+    enabled: yes
+
+- name: install tomcat
+  yum:
+    name: tomcat
+    state: latest
+
+- name: run tomcat
+  service:
+    name: tomcat
+    state: started
+    enabled: yes
