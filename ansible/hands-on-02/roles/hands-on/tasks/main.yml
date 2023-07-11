@@ -20,3 +20,8 @@
     name: tomcat
     state: started
     enabled: yes
+
+- name: index
+  copy: >
+    src=/home/ec2-user/ansible/index.html
+    dest=/var/www/html
