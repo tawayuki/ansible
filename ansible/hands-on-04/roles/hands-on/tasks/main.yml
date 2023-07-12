@@ -1,0 +1,23 @@
+
+- name: install mysql
+  yum: name=mysql-community-server state=latest
+- name: mysql start / enable
+  service: name=mysqld state=started enabled=yes
+- name: install php
+  yum: name={{item}} state=latest
+  with_items:
+    - php
+    - php-devel
+    - php-mbstring
+    - php-mysql
+    - php-gd
+  notify:
+    - restart httpd
+- name: html copy
+  copy:
+    src: /etc/ansible/test.html
+    dest: /var/www/html
+- name: php copy
+  copy:
+    src: /etc/ansible/test.php
+    dest: /var/www/html
