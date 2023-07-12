@@ -1,7 +1,6 @@
----
-- name: rpm install MySQL Yum Repository
+- name: "[CentOS7,AMZN2] mysql communityレポジトリインストール"
   yum:
-    name: https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+    name: https://repo.mysql.com//mysql80-community-release-el7-5.noarch.rpm
     state: present
 
 - name: enable mysql57-community
